@@ -1,2 +1,0 @@
-# P2S---Pic-To-Svg-Converter
- 
