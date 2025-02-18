@@ -1,5 +1,3 @@
-import '..src/styles/App.css';
-
 function App() {
 
 }
