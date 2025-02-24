@@ -1,0 +1,190 @@
+.preview-container {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border: 2px dashed var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    background-image: linear-gradient(50deg, transparent 15%, rgba(0, 0, 0, 0.1) 15%, rgba(0, 0, 0, 0.1) 50%, transparent 50%, transparent 65%, rgba(0, 0, 0, 0.1) 65%);
+    background-size: 5px 5px;
+  }
+  
+  .dark-mode .preview-container {
+    background-image: linear-gradient(50deg, transparent 15%, rgba(177, 177, 177, 0.466) 15%, rgba(138, 132, 132, 0.336) 50%, transparent 50%, transparent 65%, rgba(241, 238, 238, 0.267) 65%);
+    background-size: 5px 5px;
+  }
+  
+  .preview-svg {
+    display: flex;
+    justify-content: center;
+    width: initial;
+    height: initial;
+  }
+  
+  .preview-container svg {
+    max-width: 350px;
+    max-height: 350px;
+  }
+  
+  .tool-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .download-button {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .download-button:hover {
+    background: var(--secondary-color);
+    transition: background 0.3s ease;
+  }
+  
+  .add-new-file-button {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .add-new-file-button:hover {
+    background: var(--secondary-color);
+    transition: background 0.3s ease;
+  }
+  
+  .svg-details {
+    background-color: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .dark-mode .svg-details {
+    background-color: var(--background-dark);
+  }
+  
+  .svg-details h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .filter-controls {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .filter-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-item label {
+    min-width: 100px;
+    color: var(--text-light);
+  }
+  
+  .dark-mode .filter-item label {
+    color: var(--text-dark);
+  }
+  
+  .filter-item input[type="range"] {
+    flex: 1;
+    max-width: 200px;
+  }
+  
+  .filter-item input[type="color"] {
+    width: 50px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filter-item span {
+    min-width: 50px;
+    text-align: right;
+    color: var(--text-light);
+  }
+  
+  .dark-mode .filter-item span {
+    color: var(--text-dark);
+  }
+  
+  .filter-item select {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    min-width: 150px;
+  }
+  
+  .dark-mode .filter-item select {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    border-color: var(--border-color-dark);
+  }
+  
+  .filter-item select:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+  
+  .add-new-file-button {
+    text-decoration: none;
+  }
+  
+  .loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .preview-container {
+    position: relative;
+  }
+  
+  [dir="rtl"] .tool-button {
+    flex-direction: row-reverse;
+  }
+  
+  [dir="rtl"] .add-new-file-button {
+    margin-left: 10px;
+    margin-right: 0;
+  }
