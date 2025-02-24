@@ -1,0 +1,48 @@
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    padding: 1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.205);
+    margin-top: 3rem;
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    margin: 0 auto;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-0.2rem);
+  }
+  
+  .dark-mode .cta-button {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(97, 91, 91, 0.205);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .cta-button {
+      width: 40%;
+    }
+    
+  }
+  
+  @media screen and (max-width: 768px) {
+    .cta-button {
+      width: 50%;
+    }
+    
+  }
+
+  @media screen and (max-width: 480px) {
+    .cta-button {
+      width: 75%;
+    }
+    
+  }
