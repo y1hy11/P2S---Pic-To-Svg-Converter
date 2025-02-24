@@ -1,0 +1,16 @@
+@import '../styles/base/variables.css';
+@import '../styles/base/utilities.css';
+@import '../styles/components/Footer.css';
+@import '../styles/components/FileUpload.css';
+@import '../styles/components/Navbar.css';
+@import '../styles/components/InfoSection.css';
+@import '../styles/components/SvgPreview.css';
+@import '../styles/components/StartButton.css';
+@import '../styles/components/loading.css';
+@import '../styles/components/ErrorBoundary.css';
+@import '../styles/pages/Home.css';
+@import '../styles/pages/Convert.css';
+@import '../styles/pages/Contact.css';
+@import '../styles/pages/Privacy.css';
+@import '../styles/pages/NotFound.css';
+@import '../styles/pages/Tool.css';
