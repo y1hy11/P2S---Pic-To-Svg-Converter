@@ -1,0 +1,96 @@
+.App {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+  }
+  
+  .dark-mode .App {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+  }
+  
+  .hero {
+    text-align: center;
+    margin-top: 4.5rem;
+    padding: 150px 20px 250px 20px;
+    background-image: url('/public/Hero-Logo1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+  }
+  
+  .hero h1 {
+    color: var(--text-light);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dark-mode .hero h1 {
+    color: var(--text-dark);
+  }
+  
+  .hero p {
+    color: var(--text-light);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dark-mode .hero p {
+    color: var(--text-dark);
+  }
+  
+  .scroll-arrow {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 5.5rem;
+    margin-top: 6rem;
+    width: 0;
+    animation: bounce 2s infinite;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .dark-mode .scroll-arrow {
+    color: var(--text-dark);
+  }
+  
+  [dir='rtl'] .hero h1 {
+    font-size: 4rem;
+  }
+  
+  [dir='rtl'] .hero p {
+    font-size: 2rem;
+  }
+   
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(10px);
+    }
+    60% {
+      transform: translateY(5px);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero {
+      padding: 150px 20px 300px 20px;
+    }
+  
+    .hero h1 {
+      font-size: 50px;
+    }
+  
+    .hero p {
+      font-size: 30px;
+    }
+  
+    .scroll-arrow {
+      font-size: 7rem;
+      margin-top: 10rem;
+    }
+  }
