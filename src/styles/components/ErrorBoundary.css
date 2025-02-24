@@ -1,0 +1,26 @@
+.error-boundary {
+    padding: 15rem 2rem 2rem 2rem;  
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+    color: var(--text-light);
+  }
+  
+  .dark-mode .error-boundary {
+    color: var(--text-dark);
+  }
+  
+  .error-boundary button {
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .error-boundary button:hover {
+    background: var(--secondary-color);
+    transition: background 0.3s ease;
+  }
