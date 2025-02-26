@@ -1,0 +1,242 @@
+.tool-page {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .tool-page h1 {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+  
+  .dark-mode .tool-page h1 {
+    color: var(--text-dark);
+  }
+
+  .editor-container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .error {
+    text-align: center;
+    color: red;
+    margin: 2rem 0;
+  }
+
+  .editor-controls {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px dashed var(--primary-color);
+    border-radius: 8px;
+    background-color: var(--background-light);
+  }
+
+  .dark-mode .editor-controls {
+    background-color: var(--background-dark);
+  }
+
+  .editor-controls label {
+    display: block;
+    margin: 10px 0;
+    color: var(--text-light);
+  }
+
+  .dark-mode .editor-controls label {
+    color: var(--text-dark);
+  }
+
+  .editor-controls input[type="color"] {
+    margin-left: 10px;
+  }
+
+  .editor-controls input[type="range"] {
+    width: 200px;
+    margin-left: 10px;
+    color: var(--primary-color);
+  }
+
+  .filter-control {
+    margin: 15px 0;
+  }
+
+  .filter-control label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+  }
+
+  .dark-mode .filter-control label {
+    color: var(--text-dark);
+  }
+
+  .filter-control select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--background-light);
+    color: var(--text-light);
+  }
+
+  .dark-mode .filter-control select {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+  }
+
+  .reset-button {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 0 10px 200px;
+  }
+
+  .reset-button:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .preview-container {
+    position: relative;
+  }
+
+  .P2S-version {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  .dark-mode .P2S-version {
+    color: var(--text-dark);
+  }
+
+  [dir="rtl"] .editor-controls {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .editor-controls label {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .reset-button {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .convert-page {
+      padding-top: 12rem;
+      padding-bottom: 20rem;
+    }
+
+    .file-upload {
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+      font-weight: 600;
+    }
+
+    .editor-container-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tool-page {
+      padding: 8rem 1rem 4rem;
+    }
+  
+    .tool-page h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .editor-controls,
+    .preview-container {
+      width: 100%;
+      max-width: 350px;
+      height: 350px;
+      padding: 15px;
+    }
+  
+    .editor-controls input[type="range"] {
+      width: 150px;
+    }
+  
+    .reset-button {
+      margin: 0 0 10px 150px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+  
+    .filter-control {
+      margin: 12px 0;
+    }
+  
+    .filter-control select {
+      width: 100%;
+      margin-top: 5px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .tool-page {
+      padding: 7rem 0.5rem 3rem;
+    }
+  
+    .tool-page h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .editor-controls,
+    .preview-container {
+      width: 100%;
+      max-width: 280px;
+      height: 280px;
+      padding: 10px;
+    }
+  
+    .editor-controls input[type="range"] {
+      width: 120px;
+    }
+  
+    .reset-button {
+      margin: 0 0 10px 100px;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+    }
+  
+    [dir="rtl"] .reset-button {
+      margin: 0 100px 10px 0;
+    }
+  
+    .filter-control label {
+      font-size: 0.9rem;
+      gap: 5px;
+    }
+  
+    .P2S-version {
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+    }
+  }
+  
+  @supports (padding-top: env(safe-area-inset-top)) {
+    .tool-page {
+      padding-top: calc(6rem + env(safe-area-inset-top));
+      padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+      padding-left: calc(2rem + env(safe-area-inset-left));
+      padding-right: calc(2rem + env(safe-area-inset-right));
+    }
+  }
