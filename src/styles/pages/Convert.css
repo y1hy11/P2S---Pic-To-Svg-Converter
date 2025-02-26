@@ -1,0 +1,33 @@
+.convert-page {
+    margin: 0 auto;
+    padding: 12rem 0 5rem 0;
+    background-color: var(--background-light);
+  }
+  
+  .convert-page h1 {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+  
+  .convert-page p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  
+  .dark-mode .convert-page {
+    background-color: var(--background-dark);
+  }
+  
+  .dark-mode .convert-page h1 {
+    color: var(--text-dark);
+  }
+  
+  .dark-mode .convert-page p {
+    color: var(--text-dark);
+  }
+  
+  [dir="rtl"] .convert-page h1 {
+    direction: ltr;
+    font-size: 40px;
+  }
