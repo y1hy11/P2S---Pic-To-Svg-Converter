@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaMoon, FaSun, FaBars, FaGlobe } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
-import { AppContext } from '../Context/AppContext';
+import { AppContext } from '../context/AppContext';
 
 
 const Navbar = () => {

@@ -6,7 +6,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import './styles/App.css';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './utils/i18n';
-import { AppProvider } from './Context/AppContext';
+import { AppProvider } from './context/AppContext';
 
 
 const Home = lazy(() => import('./pages/Home'));
