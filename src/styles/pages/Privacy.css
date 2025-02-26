@@ -1,0 +1,131 @@
+.privacy-policy {
+    padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--background-light);
+    color: var(--text-light);
+  }
+  
+  .policy-container {
+    background-color: var(--background-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .privacy-policy h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+  
+  .policy-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .policy-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .policy-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .policy-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .policy-section ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+  }
+  
+  .policy-section ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  
+  .policy-section ul li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: -1.5rem;
+  }
+  
+  .policy-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .policy-section a:hover {
+    color: var(--secondary-color);
+  }
+  
+  .dark-mode .privacy-policy {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+  }
+  
+  .dark-mode .policy-container {
+    background-color: var(--background-dark);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark-mode .policy-section {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  [dir="rtl"] .policy-container {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .policy-section {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .policy-section ul {
+    padding-right: 20px;
+    padding-left: 0;
+  }
+  
+  [dir="rtl"] .policy-section a {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  
+  [dir="rtl"] .policy-section ul li:before {
+    right: -1.5rem;
+    left: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .privacy-policy {
+      padding: 7rem 1rem 2rem;
+    }
+  
+    .policy-container {
+      padding: 1.5rem;
+    }
+  
+    .privacy-policy h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  
+    .policy-section h2 {
+      font-size: 1.25rem;
+    }
+    
+    .policy-section {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+    }
+  }
