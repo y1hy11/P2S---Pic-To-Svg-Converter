@@ -46,12 +46,12 @@
     <th>Converted SVG</th>
   </tr>
   <tr>
-    <td><img src=".public/showcase/original1.png" alt="Original" width="300"></td>
-    <td><img src=".public/showcase/converted1.svg" alt="Converted" width="300"></td>
+    <td><img src="public/showcase/original1.png" alt="Original" width="300"></td>
+    <td><img src="public/showcase/converted1.svg" alt="Converted" width="300"></td>
   </tr>
   <tr>
-    <td><img src=".public/showcase/original2.png" alt="Original" width="300"></td>
-    <td><img src=".public/showcase/converted2.svg" alt="Converted" width="300"></td>
+    <td><img src="public/showcase/original2.png" alt="Original" width="300"></td>
+    <td><img src="public/showcase/converted2.svg" alt="Converted" width="300"></td>
   </tr>
 </table>
 
@@ -130,7 +130,7 @@
 
 <h2>Contact</h2>
 <ul>
-  <li>GitHub: <a href="https://github.com/Y1hy11">Your GitHub Profile</a></li>
+  <li>GitHub: <a href="https://github.com/Y1hy11">My GitHub Profile</a></li>
   <li>Twitter: <a href="https://x.com/y1hy1_1">@y1hy1_1</a></li>
   <li>LinkedIn: <a href="https://www.linkedin.com/in/yahya-elalaoui/">Yahya Elalaoui</a></li>
 </ul>
