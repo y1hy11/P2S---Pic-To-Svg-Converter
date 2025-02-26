@@ -6,7 +6,7 @@
 @import '../styles/components/InfoSection.css';
 @import '../styles/components/SvgPreview.css';
 @import '../styles/components/StartButton.css';
-@import '../styles/components/loading.css';
+@import '../styles/components/Loading.css';
 @import '../styles/components/ErrorBoundary.css';
 @import '../styles/pages/Home.css';
 @import '../styles/pages/Convert.css';
