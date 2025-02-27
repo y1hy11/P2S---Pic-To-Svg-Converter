@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
@@ -11,9 +11,17 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('')
-  const { t } = useTranslation()
+  const [isSuccess, setIsSuccess] = useState(false)
+  const { t, i18n } = useTranslation() // Get i18n instance as well
 
-  const validateForm = () => {
+  // This effect will re-validate the form when language changes
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      validateForm(true)
+    }
+  }, [i18n.language, errors, validateForm]) // Add errors as dependency
+
+  const validateForm = useCallback((skipSetErrors = false) => {
     const newErrors = {}
     
     if (!formData.name.trim()) {
@@ -35,9 +43,21 @@ const Contact = () => {
       newErrors.message = t('contact.errors.messageLength')
     }
 
-    setErrors(newErrors)
+    if (!skipSetErrors) {
+      setErrors(newErrors)
+    } else {
+      // Update only existing error messages with new translations
+      const updatedErrors = {...errors}
+      Object.keys(updatedErrors).forEach(key => {
+        if (newErrors[key]) {
+          updatedErrors[key] = newErrors[key]
+        }
+      })
+      setErrors(updatedErrors)
+    }
+    
     return Object.keys(newErrors).length === 0
-  }
+  })
 
   const handleChange = (e) => {
     setFormData({
@@ -75,6 +95,7 @@ const Contact = () => {
         
         if (data.success) {
           setStatus(t('contact.success'))
+          setIsSuccess(true)
           setFormData({
             name: '',
             email: '',
@@ -84,9 +105,11 @@ const Contact = () => {
           setErrors({})
         } else {
           setStatus(t('contact.error'))
+          setIsSuccess(false)
         }
       } catch (error) {
         setStatus(t('contact.error'))
+        setIsSuccess(false)
         console.error('Submit error:', error)
       }
     }
@@ -152,7 +175,7 @@ const Contact = () => {
           </div>
 
           {status && (
-            <div className={`message ${status.includes('success') ? 'success' : 'error'}`}>
+            <div className={`message ${isSuccess ? 'success' : 'error'}`}>
               {status}
             </div>
           )}
