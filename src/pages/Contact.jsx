@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
@@ -11,17 +11,9 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('')
-  const [isSuccess, setIsSuccess] = useState(false)
-  const { t, i18n } = useTranslation() // Get i18n instance as well
+  const { t } = useTranslation()
 
-  // This effect will re-validate the form when language changes
-  useEffect(() => {
-    if (Object.keys(errors).length > 0) {
-      validateForm(true)
-    }
-  }, [i18n.language, errors, validateForm]) // Add errors as dependency
-
-  const validateForm = useCallback((skipSetErrors = false) => {
+  const validateForm = () => {
     const newErrors = {}
     
     if (!formData.name.trim()) {
@@ -43,28 +35,16 @@ const Contact = () => {
       newErrors.message = t('contact.errors.messageLength')
     }
 
-    if (!skipSetErrors) {
-      setErrors(newErrors)
-    } else {
-      // Update only existing error messages with new translations
-      const updatedErrors = {...errors}
-      Object.keys(updatedErrors).forEach(key => {
-        if (newErrors[key]) {
-          updatedErrors[key] = newErrors[key]
-        }
-      })
-      setErrors(updatedErrors)
-    }
-    
+    setErrors(newErrors)
     return Object.keys(newErrors).length === 0
-  })
+  }
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
-    
+
     if (errors[e.target.name]) {
       setErrors({
         ...errors,
@@ -75,8 +55,11 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    
     if (validateForm()) {
       try {
+        setStatus('')
+        
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
@@ -95,7 +78,6 @@ const Contact = () => {
         
         if (data.success) {
           setStatus(t('contact.success'))
-          setIsSuccess(true)
           setFormData({
             name: '',
             email: '',
@@ -105,11 +87,9 @@ const Contact = () => {
           setErrors({})
         } else {
           setStatus(t('contact.error'))
-          setIsSuccess(false)
         }
       } catch (error) {
         setStatus(t('contact.error'))
-        setIsSuccess(false)
         console.error('Submit error:', error)
       }
     }
@@ -129,7 +109,6 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              required
             />
             {errors.name && <span className="validation-message error">{errors.name}</span>}
           </div>
@@ -142,7 +121,6 @@ const Contact = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
             />
             {errors.email && <span className="validation-message error">{errors.email}</span>}
           </div>
@@ -169,13 +147,12 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               rows="5"
-              required
             />
             {errors.message && <span className="validation-message error">{errors.message}</span>}
           </div>
 
           {status && (
-            <div className={`message ${isSuccess ? 'success' : 'error'}`}>
+            <div className={`message ${status.includes('success') ? 'success' : 'error'}`}>
               {status}
             </div>
           )}
