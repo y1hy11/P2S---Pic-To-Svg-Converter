@@ -14,6 +14,7 @@ const Home = () => {
   return (
     <div className="home">
       <header className="hero">
+        <div className="background-pattern"></div>
         <h1>{t('hero.title')}</h1>
         <p>{t('hero.subtitle')}</p>
         <span className="scroll-arrow" onClick={scrollToInfo}>↓</span>
