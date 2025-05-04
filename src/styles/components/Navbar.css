@@ -1,4 +1,8 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: var(--background-light);
     padding: 1rem;
     border-bottom: none;
@@ -6,14 +10,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
     width: 100%;
     z-index: 1000;
   }
   
   .dark-mode .navbar {
     background-color: var(--background-dark);
+  }
+
+  .Navbar-logo {
+    width: 50px;
+    height: 50px;
   }
   
   .navbar-brand {
@@ -38,17 +45,36 @@
   .navbar-links {
     display: flex;
     margin: 0 auto;
-    gap: 2rem;
+    gap: 2.5rem;
   }
   
   .navbar-links a {
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: var(--text-light);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFAE22;
+    transition: width 0.3s ease;
   }
   
   .navbar-links a:hover {
     color: #FFAE22;
+  }
+  
+  .navbar-links a:hover::after {
+    width: 100%;
   }
   
   .dark-mode .navbar-links a {
@@ -72,7 +98,6 @@
     align-items: center;
     padding: 0.5rem;
   }
-  
   
   .sidebar {
     display: none;
@@ -102,15 +127,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    width: 100%;
   }
   
   .sidebar-links a {
-    color: rgb(0, 0, 0);
+    color: var(--text-light);
     text-decoration: none;
     font-size: 1.2rem;
-    padding: 0.5rem;
+    font-weight: 500;
+    padding: 0.75rem;
     width: 100%;
+    text-align: center;
+    border-radius: 6px;
+    transition: all 0.3s ease;
   }
   
   .dark-mode .sidebar-links a {
@@ -119,6 +149,8 @@
   
   .sidebar-links a:hover {
     color: #FFAE22;
+    background-color: rgba(255, 174, 34, 0.1);
+    transform: translateY(-2px);
   }
   
   .nav-button svg {
@@ -152,18 +184,59 @@
   .language-btn {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    min-width: 150px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid black;
     border-radius: 4px;
-    transition: background-color 0.2s;
+    background: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
   
   .language-btn:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
   
+  .dark-mode .language-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .language-btn span {
+    color: var(--text-light);
+    font-size: 0.95rem;
+  }
+  
+  .dark-mode .language-btn span {
+    color: var(--text-dark);
+  }
+  
+  .language-btn svg {
+    width: 20px;
+    height: 20px;
+    color: var(--text-light);
+    margin-left: auto;
+    transition: all 0.3s ease;
+  }
+
+  .dark-mode .language-btn svg {
+    color: var(--text-dark);
+  }
+
+  .language-btn svg path {
+    stroke: currentColor;
+  }
+
+  .language-selector:hover .language-btn svg {
+    transform: rotate(180deg);
+  }
+
   .icon-globe {
     font-size: 1.2rem;
+    color: var(--text-light);
+  }
+  
+  .dark-mode .icon-globe {
+    color: var(--text-dark);
   }
   
   .language-dropdown {
@@ -282,6 +355,12 @@
     display: block;
   }
   
+  .sidebar-language .language-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem;
+  }
+  
   [dir='rtl'] .language-option {
     flex-direction: column;
   }
@@ -308,6 +387,12 @@
     
     .sidebar-links {
       text-align: center;
+      padding: 1rem 0;
+    }
+  
+    .sidebar-links a {
+      margin-bottom: 0.5rem;
+      padding: 1rem 0.75rem;
     }
   
     .menu-button {

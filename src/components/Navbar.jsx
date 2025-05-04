@@ -20,7 +20,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-brand">
           <Link to="/" className="navbar-logo">
-            <img src="./Navbar-Logo.png" alt="P2S Converter" height="40" />
+            <img className="Navbar-logo" src="./Navbar-Logo.png" alt="P2S Converter" height="40" />
           </Link>
         </div>
         <div className="navbar-links desktop-links">
@@ -29,35 +29,44 @@ const Navbar = () => {
           <Link to="/contact">{t('nav.contact')}</Link>
         </div>
         <div className="navbar-controls">
-          <div className="language-selector">
-            <button  className="nav-button language-btn">
-              <FaGlobe className="icon-globe" />
-            </button>
-            <div className="language-dropdown">
-              <button 
-                onClick={() => changeLanguage('en')} 
-                className={`language-option ${language === 'en' ? 'active' : ''}`}
-              >
-                🇬🇧 English
+          <div className="Navbar-language">
+            <div className="language-selector">
+              <button className="nav-button language-btn">
+                <span>{t('nav.language')}</span>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier"> 
+                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> 
+                  </g>
+                </svg>
               </button>
-              <button 
-                onClick={() => changeLanguage('fr')} 
-                className={`language-option ${language === 'fr' ? 'active' : ''}`}
-              >
-                🇫🇷 Français
-              </button>
-              <button 
-                onClick={() => changeLanguage('ar')} 
-                className={`language-option ${language === 'ar' ? 'active' : ''}`}
-              >
-                🇸🇦 العربية
-              </button>
-              <button 
-                onClick={() => changeLanguage('es')} 
-                className={`language-option ${language === 'es' ? 'active' : ''}`}
-              >
-                🇪🇸 Español
-              </button>
+              <div className="language-dropdown">
+                <button 
+                  onClick={() => changeLanguage('en')} 
+                  className={`language-option ${language === 'en' ? 'active' : ''}`}
+                >
+                  🇬🇧 English
+                </button>
+                <button 
+                  onClick={() => changeLanguage('fr')} 
+                  className={`language-option ${language === 'fr' ? 'active' : ''}`}
+                >
+                  🇫🇷 Français
+                </button>
+                <button 
+                  onClick={() => changeLanguage('ar')} 
+                  className={`language-option ${language === 'ar' ? 'active' : ''}`}
+                >
+                  🇸🇦 العربية
+                </button>
+                <button 
+                  onClick={() => changeLanguage('es')} 
+                  className={`language-option ${language === 'es' ? 'active' : ''}`}
+                >
+                  🇪🇸 Español
+                </button>
+              </div>
             </div>
           </div>
           <button
