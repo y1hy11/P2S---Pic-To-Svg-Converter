@@ -49,6 +49,13 @@
     transition: color 0.3s ease;
   }
 
+  .dark-mode .footer-section ul a {
+    color: var(--text-dark);
+  }
+  .dark-mode .footer-section ul a:hover {
+    color: var(--primary-color);
+  }
+  
   .footer-section ul a::after {
     content: '';
     position: absolute;
