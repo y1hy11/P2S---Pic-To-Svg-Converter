@@ -21,6 +21,17 @@
     font-size: 1.2rem;
   }
   
+  .footerImg {
+    width: 100%;
+    height: auto;
+    max-width: 60px;
+  }
+
+  .footerImg, img {
+    width: 100%;
+    height: auto;
+  }
+
   .footer-section p {
     color: var(--text-light);
     margin-bottom: 1rem;
@@ -55,7 +66,7 @@
   .dark-mode .footer-section ul a:hover {
     color: var(--primary-color);
   }
-  
+
   .footer-section ul a::after {
     content: '';
     position: absolute;

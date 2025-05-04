@@ -206,7 +206,6 @@ const resources = {
         }
       },
       footer: {
-        header: 'P2S',
         description: 'P2S Converter is an Online Image, SVG Conversion Tool',
         help: 'Help & Support',
         help_contact: 'Contact Us',

@@ -27,7 +27,7 @@ const Footer = React.memo(() => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h4>{t('footer.header')}</h4>
+          <img className='footerImg' src='./P2S-LOGO-1.png' alt='footerImage' />
           <p>{t('footer.description')}</p>
         </div>
 
