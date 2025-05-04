@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaMoon, FaSun, FaBars, FaGlobe } from "react-icons/fa";
+import { FaMoon, FaSun, FaBars } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
@@ -29,6 +29,17 @@ const Navbar = () => {
           <Link to="/contact">{t('nav.contact')}</Link>
         </div>
         <div className="navbar-controls">
+        <button
+            onClick={toggleTheme}
+            className="nav-button"
+            aria-label="Toggle theme"
+          >
+            {isDarkMode ? (
+              <FaMoon className="fa-moon" />
+            ) : (
+              <FaSun className="fa-sun" />
+            )}
+          </button>
           <div className="Navbar-language">
             <div className="language-selector">
               <button className="nav-button language-btn">
@@ -69,17 +80,6 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <button
-            onClick={toggleTheme}
-            className="nav-button"
-            aria-label="Toggle theme"
-          >
-            {isDarkMode ? (
-              <FaMoon className="fa-moon" />
-            ) : (
-              <FaSun className="fa-sun" />
-            )}
-          </button>
           <button
             className="menu-button"
             onClick={toggleSidebar}

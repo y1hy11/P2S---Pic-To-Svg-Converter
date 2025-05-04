@@ -88,6 +88,7 @@
   .navbar-controls {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
   }
   
   .nav-button {
@@ -193,6 +194,10 @@
     transition: all 0.2s ease;
   }
   
+  .dark-mode .language-btn {
+    border: 1px solid var(--text-dark);
+  }
+
   .language-btn:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
