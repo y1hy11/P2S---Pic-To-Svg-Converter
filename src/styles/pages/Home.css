@@ -7,14 +7,42 @@
     background-color: var(--background-dark);
     color: var(--text-light);
   }
+   
+
+  .background-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-image: url('/public/P2S-LOGO-1.png');
+    background-size: 200px 200px, 100px 100px;
+    background-position: 0 0, 200px 0;
+    background-repeat: repeat;
+    opacity: 0.4;
+    animation: scrollPattern 50s linear infinite;
+  }
+  
+  @keyframes scrollPattern {
+    from {
+      background-position: 1px, 0, 200px 0;
+    }
+    to {
+      background-position: 400px 0, -100px 0;
+    }
+  }
   
   .hero {
+    position: relative;
     text-align: center;
     margin-top: 4.5rem;
     padding: 150px 20px 250px 20px;
   }
   
   .hero h1 {
+    position: relative;
+    z-index: 1;
     color: var(--text-light);
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -25,6 +53,8 @@
   }
   
   .hero p {
+    position: relative;
+    z-index: 1;
     color: var(--text-light);
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -35,6 +65,8 @@
   }
   
   .scroll-arrow {
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: center;
     margin: 0 auto;
