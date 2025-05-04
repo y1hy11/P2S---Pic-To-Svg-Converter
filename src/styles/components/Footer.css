@@ -10,9 +10,9 @@
   .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-direction: block;
+    gap: 9rem;
   }
   
   .footer-section h4 {
@@ -150,13 +150,13 @@
   
   @media (max-width: 768px) {
     .footer-content {
-      grid-template-columns: repeat(2, 1fr);
+      flex-direction: column;
       gap: 1.5rem;
     }
   }
   
   @media (max-width: 480px) {
     .footer-content {
-      grid-template-columns: 1fr;
+      flex-direction: column;
     }
   }
