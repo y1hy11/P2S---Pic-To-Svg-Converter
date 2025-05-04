@@ -37,17 +37,40 @@
   }
   
   .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
+    position: relative;
   }
-  
+
   .footer-section ul a {
     color: var(--text-light);
     text-decoration: none;
+    padding: 0.3rem 0;
+    position: relative;
     transition: color 0.3s ease;
   }
-  
-  .footer-section ul li a:hover {
+
+  .footer-section ul a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+
+  .footer-section ul a:hover {
     color: var(--primary-color);
+  }
+
+  .footer-section ul a:hover::after {
+    width: 100%;
+  }
+
+  [dir="rtl"] .footer-section ul a::after {
+    left: auto;
+    right: 0;
   }
   
   .social-links {
